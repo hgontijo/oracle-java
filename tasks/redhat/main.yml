@@ -49,10 +49,7 @@
 
 - name: download Java RPM
   get_url:
-    headers='Cookie:gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie'    dest="{{ oracle_java_dir_source }}/{{ oracle_java_rpm_filename }}"
-    url="{{ oracle_java_rpm_url }}"
-    validate_certs="{{ oracle_java_rpm_validate_certs }}"
-    timeout={{ oracle_java_download_timeout }}
+    headers='Cookie:oraclelicense=accept-securebackup-cookie;OHS-edelivery.oracle.com-443=C7F18BF5F2D4EB3C9213441836A6CEFC8369EB725131A623DD4EE916516BCEAE02049760D8D3D6A6F6191D2D0BBF4CBCE87FACD030D15E809BD2F4B0E4734357F6044819781B9BE22172E9ECC5C202481FAC128F3086F6F255734D64A167A2C1CEB92C50E2D6DDB2B51FC8A971033A6B8CA72C6713C4800F6F4C6DE069B09D10C2B6E3C6472CA328AB7BCB7FFC37478F1485B856246888D400699202DAF7DDD16E2DAD0ADB91DD3A7075E3C8B993DB431AC79C51CFF92F589FF043C3B63AE5AA6F84395D8A4A03778C92C9D996F790869C27C7CE45777B89F71251FFEA0FB6DEBAFF6EE711331957~' dest="{{ oracle_java_dir_source }}/{{ oracle_java_rpm_filename }}" url="{{ oracle_java_rpm_url }}" validate_certs="{{ oracle_java_rpm_validate_certs }}" timeout={{ oracle_java_download_timeout }}
   register: oracle_java_task_rpm_download
   become: yes
   tags: [ installation ]
